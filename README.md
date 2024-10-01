@@ -1,5 +1,5 @@
 # Webex-bot
-A Webex bot publishing messages on a dedicated room<br/>
+A bot publishing messages on a dedicated [Webex](https://developer.webex.com/) room<br/>
 
 ### Secure your system
 You thought you'd get away without the necessary lecture?!?</br>
@@ -44,7 +44,7 @@ A quick run of the main script would do:
 ```
 $ ./wxbot.py
 ```
-If everything has been setup correctly, according to the instructions to be found on Telegram API pages, a ping should hit your mobile phone with an apt message.</br>
+If everything has been setup correctly, a message should appear in the room.</br>
 
 ### Build Docker container
 This part is optional but no README would be complete without the containerization section:
