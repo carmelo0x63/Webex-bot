@@ -57,7 +57,7 @@ $ docker run \
     --detach \
     --rm \
     --volume /var/log:/var/log:ro \
-    --volume -v $PWD:/usr/local/bin \
+    --volume $PWD:/usr/local/bin \
     <repository>/<image>:<tag>
 ```
 
