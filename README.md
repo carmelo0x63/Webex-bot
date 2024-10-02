@@ -16,7 +16,7 @@ Regarding `#2` above, you may want to read a guide:
 OK, now you're good to go and read the rest :)
  
 ### Pre-requisites
-Webex bots help users automate tasks and bring external content into the discussion. More info on [Bots](https://developer.webex.com/docs/bots)<br/>
+Webex bots help users automate tasks and bring external content into the discussion. More info on [Bots](https://developer.webex.com/docs/bots).<br/>
 
 ### Setup and first run
 1. Clone the repository and create a virtual environment
