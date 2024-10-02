@@ -86,7 +86,7 @@ def main():
         filtered_auth = subprocess.check_output(['grep', BADGUY], stdin = filtered_auth_temp.stdout)
 
         # Eventually, we'll get an output that only shows the interesting lines:
-        # b'<timestamp> <hostname> sshd[12786]: Invalid user <attacker> from <ip_address> port <portN>\n ..."
+        # b'<timestamp> <hostname> sshd[12786]: Invalid user <attacker> from <ip_address> port <port_number>\n ..."
         # the type will be 'bytes'
 
         # Finally the output will be split based on newline ('\n') characters

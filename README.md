@@ -1,5 +1,8 @@
 # Webex bot
 A bot publishing messages on a dedicated [Webex](https://developer.webex.com/) room.<br/>
+Webex bots help users automate tasks and bring external content into the discussion. More info on [Bots](https://developer.webex.com/docs/bots) and how to create one.<br/>
+This is just a PoC but already usable. The script, written in Python, contained in this repository is supposed to run on your own personal server (a Raspberry pi, a cloud VM, a physical server...). It checks, at configurable intervals, the messages in `auth.log` for contents such as `Invalid user <attacker> from <ip_address> port <port_number>`.<br/>
+If any such messages exist, a notification will be published on the Webex room by the bot.<br/>
 
 ### Secure your system
 You thought you'd get away without the necessary lecture?!?</br>
@@ -14,27 +17,25 @@ Regarding `#2` above, you may want to read a guide:
 2. install [Fail2Ban](https://www.fail2ban.org/)
 
 OK, now you're good to go and read the rest :)
- 
-### Pre-requisites
-Webex bots help users automate tasks and bring external content into the discussion. More info on [Bots](https://developer.webex.com/docs/bots) and how to create one.<br/>
 
 ### Setup and first run
 1. Clone the repository and create a virtual environment
 ```
-$ git clone https://github.com/carmelo0x99/wxbot.git
+$ git clone https://github.com/carmelo0x99/Webex-bot.git
 
-$ cd wxbot/
+$ cd Webex-bot/
 
 $ python3 -m venv .
 
 $ source bin/activate
 
-(wxbot) $ python3 -m pip install --upgrade pip setuptools wheel
+(Webex-bot) $ python3 -m pip install --upgrade pip setuptools wheel
 
-(wxbot) $ python3 -m pip install requests
+(Webex-bot) $ python3 -m pip install requests
 ```
 
-2. Configure your own setup with the appropriate bot name, bearer token and room identifier. The configuration file, `wxbot.json`, should look like this
+2. Configure your own setup with the appropriate credentials: the bearer token and room identifier you've received when first creating the bot.<br/>
+The configuration file, `wxbot.json`, should look like this
 ```
 {"BEARER": "<long string>", "ROOM_ID": "<long string>"}
 ```
@@ -44,7 +45,7 @@ A quick run of the main script would do:
 ```
 $ ./wxbot.py
 ```
-If everything has been setup correctly, a message should appear in the room.</br>
+If everything has been setup correctly, a local log file (`wxbot.log`) will be created. A message should appear in the room only if `auth.log` contains the expected messages.</br>
 
 ### Build Docker container
 This part is optional but no README would be complete without the containerization section:
