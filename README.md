@@ -1,5 +1,5 @@
-# Webex-bot
-A bot publishing messages on a dedicated [Webex](https://developer.webex.com/) room<br/>
+# Webex bot
+A bot publishing messages on a dedicated [Webex](https://developer.webex.com/) room.<br/>
 
 ### Secure your system
 You thought you'd get away without the necessary lecture?!?</br>
@@ -34,7 +34,7 @@ $ source bin/activate
 (wxbot) $ python3 -m pip install requests
 ```
 
-2. Configure your own setup with the appropriate bot name, token and chat ID. The configuration file, `wxbot.json`, looks like this
+2. Configure your own setup with the appropriate bot name, bearer token and room identifier. The configuration file, `wxbot.json`, should look like this
 ```
 {"BEARER": "<long string>", "ROOM_ID": "<long string>"}
 ```
